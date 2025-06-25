@@ -32,7 +32,10 @@
 
 Запрос
 ```
-
+SELECT DISTINCT district
+FROM address
+WHERE district LIKE 'K%a'
+AND district NOT LIKE '% %';
 
 ```
 
@@ -48,7 +51,10 @@
 
 Запрос
 ```
-
+SELECT *
+FROM payment
+WHERE payment_date BETWEEN '2005-06-15' AND '2005-06-18'
+AND amount > 10.00;
 
 ```
 
@@ -64,7 +70,10 @@
 
 Запрос
 ```
-
+SELECT *
+FROM rental
+ORDER BY rental_date DESC
+LIMIT 5;
 
 ```
 
@@ -84,7 +93,13 @@
 
 Запрос
 ```
-
+SELECT
+    LOWER(first_name) AS lowered_first_name,
+    REPLACE(LOWER(first_name), 'll', 'pp') AS LLed_first_name,
+    LOWER(last_name) AS lowered_last_name
+FROM customer
+WHERE active = 1
+AND (first_name = 'Kelly' OR first_name = 'Willie');
 
 ```
 
